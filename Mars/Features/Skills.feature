@@ -11,33 +11,28 @@ And I logged in with valid user mane and password
 
 @automation @ chrome @p1
 Scenario: Add new skill with valid data
-	Given I have opened the browser
-	And I sign in on the skillswap web
-	And I opened the skills tab
+	Given I have opened the skill tab
 	When I add new skill
 	Then A success popup message should be displayed
 
 @automation @ chrome @p1
 Scenario: Update skill with valid data
-	Given I have opened the chrome browser
-	And I have signed in on skill swap web app
-	And I oopened the skils section
+	Given I have opened the skill section
 	When I click on Update button and enter valid data
 	Then A success Updated message should be displayed
 
 @automation @ chrome @p1
 Scenario: Delete skill
-	Given I have opend the chrome browser
-	And I have signed in skill swap web page
-	And I opened the Skills section
+	Given I have opened the skill sectionn
 	When I click on delete icon
 	Then A delete message should be displayed
 
 @automation @ chrome @p1
 Scenario: Add new skill with null data
-	Given Click on Add New button
-	And Enter null data on skill and skill level fields
-	When I click on add button
+	Given Open skill section
+	And   Click on Add New button
+	When  I Enter null data on skill and skill level fields
+	And   I click on add button
 	Then A error message should be prompted
 
 @automation @ chrome @p1

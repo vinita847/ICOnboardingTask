@@ -122,11 +122,13 @@
     <Compile Include="LogIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skills.cs" />
+    <Compile Include="Step Definition\EducationSteps.cs" />
     <Compile Include="Step Definition\LoginSteps.cs" />
     <Compile Include="Step Definition\SkillsSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Education.feature" />
     <None Include="Features\Login.feature" />
     <None Include="Features\Skills.feature" />
     <None Include="packages.config" />

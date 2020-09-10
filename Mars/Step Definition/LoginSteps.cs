@@ -45,27 +45,24 @@ namespace Mars.Steps
             driver.FindElement(By.Name("password")).SendKeys("Vinita@999");
             //Find element for login and click
             driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[4]/button")).Click();
-            //driver.Manage().Timeouts().PageLoad=TimeSpan.FromSeconds(300);
+            driver.Manage().Timeouts().PageLoad=TimeSpan.FromSeconds(300);
         }
         
         [Then(@"I should be able to login in the associated account")]
         public void ThenIShouldBeAbleToLoginInTheAssociatedAccount()
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(40); //implicit wait 
-            //if (driver.FindElement(By.XPath(*//div[@class='ui compact menu']/span[1]/text()[2]")).Text == "Hi vinita")
-            //{
-            //    Console.WriteLine("Test Passed");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Test Failed");
-            //}
-
-            IWebElement ValidUser = driver.FindElement(By.XPath("*//div[@class='ui compact menu']/span[1]/text()[2]"));
+            
+            try { 
+            IWebElement ValidUser = driver.FindElement(By.XPath("//span[@class='item ui dropdown link']/text()[2]"));
 
             Assert.That(ValidUser.Text, Does.Match("vinita"));
-            //Assert.AreEqual(ValidUser.Text, "Hi vinita");
-            //*[@id="account-profile-section"]/div/div[1]/div[2]/div/span/text()[2]
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("No such element found");
+            }
+            driver.Quit();
         }
 
     }

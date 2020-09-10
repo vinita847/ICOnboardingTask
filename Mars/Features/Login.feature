@@ -66,11 +66,7 @@ Scenario: cross system testing to ensure look and feel and responce of login pag
 	When  I open the login page on mac
 	Then  I should found the login page working and looking perfect on mac
 	
-@maual @linux
-Scenario: cross system testing to ensure look and feel and responce of login page 
-    Given I have Linux OS
-	When  I open the login page on Linux
-	Then  I should found the login page working and looking perfect on linux
+
 
 
 
